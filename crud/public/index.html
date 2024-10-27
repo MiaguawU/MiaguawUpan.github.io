@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <link rel="stylesheet" href="s.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.13/antd.min.css">
+    <title>Inventario de Productos - Halloween</title>
+</head>
+<body>
+    <!-- Barra de Navegación -->
+    <nav class="ant-menu ant-menu-dark ant-menu-horizontal">
+        <div class="nav-left">
+            <a href="/" class="ant-menu-item">Inicio</a>
+            <a href="/obtenerProductos" class="ant-menu-item">Ver Productos</a>
+        </div>
+    </nav>
+
+    <!-- Carrusel de Halloween -->
+    <div class="carousel-container">
+        <div class="ant-carousel" autoplay>
+            <div><img src="https://via.placeholder.com/800x300?text=Halloween+1" alt="Halloween 1"></div>
+            <div><img src="https://via.placeholder.com/800x300?text=Halloween+2" alt="Halloween 2"></div>
+            <div><img src="https://via.placeholder.com/800x300?text=Halloween+3" alt="Halloween 3"></div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <h1 class="text-center">Inventario de Productos - Halloween</h1>
+
+        <!-- Formularios en fila -->
+        <div class="form-row">
+            <!-- Formulario Agregar Producto -->
+            <form action="/agregarProducto" method="post" class="form-container ant-form ant-form-horizontal">
+                <h3>Agregar Producto</h3>
+                <!-- Campos -->
+                <div class="ant-form-item">
+                    <label for="nombre" class="ant-form-item-label">Nombre del Producto:</label>
+                    <input type="text" name="nombre" class="ant-input" required>
+                </div>
+                <div class="ant-form-item">
+                    <label for="precio" class="ant-form-item-label">Precio:</label>
+                    <input type="number" name="precio" class="ant-input" required>
+                </div>
+                <div class="ant-form-item">
+                    <label for="descripcion" class="ant-form-item-label">Descripción:</label>
+                    <input type="text" name="descripcion" class="ant-input">
+                </div>
+                <div class="ant-form-item">
+                    <label for="piezas" class="ant-form-item-label">Cantidad en Piezas:</label>
+                    <input type="number" name="piezas" class="ant-input" required>
+                </div>
+                <div class="ant-form-item">
+                    <label for="id_temporada" class="ant-form-item-label">ID de Temporada:</label>
+                    <input type="number" name="id_temporada" class="ant-input" required>
+                </div>
+                <!-- Botones -->
+                <div class="center">
+                    <input type="submit" value="Agregar" class="ant-btn ant-btn-primary">
+                    <input type="reset" value="Reset" class="ant-btn ant-btn-default">
+                </div>
+            </form>
+
+            <!-- Formulario Eliminar Producto -->
+            <form action="/borrarProducto" method="post" class="form-container ant-form ant-form-horizontal">
+                <h3>Eliminar Producto</h3>
+                <!-- Campos -->
+                <div class="ant-form-item">
+                    <label for="id" class="ant-form-item-label">ID del Producto a Eliminar:</label>
+                    <input type="number" name="id" class="ant-input" required>
+                </div>
+                <!-- Botones -->
+                <div class="center">
+                    <input type="submit" value="Eliminar" class="ant-btn ant-btn-danger">
+                    <input type="reset" value="Reset" class="ant-btn ant-btn-default">
+                </div>
+            </form>
+
+            <!-- Formulario Actualizar Producto -->
+            <form action="/actualizarProducto" method="post" class="form-container ant-form ant-form-horizontal">
+                <h3>Actualizar Producto</h3>
+                <!-- Campos -->
+                <div class="ant-form-item">
+                    <label for="id" class="ant-form-item-label">ID del Producto a Actualizar:</label>
+                    <input type="number" name="id" class="ant-input" required>
+                </div>
+                <div class="ant-form-item">
+                    <label for="nombre" class="ant-form-item-label">Nuevo Nombre:</label>
+                    <input type="text" name="nombre" class="ant-input">
+                </div>
+                <div class="ant-form-item">
+                    <label for="precio" class="ant-form-item-label">Nuevo Precio:</label>
+                    <input type="number" name="precio" class="ant-input">
+                </div>
+                <div class="ant-form-item">
+                    <label for="descripcion" class="ant-form-item-label">Nueva Descripción:</label>
+                    <input type="text" name="descripcion" class="ant-input">
+                </div>
+                <div class="ant-form-item">
+                    <label for="piezas" class="ant-form-item-label">Nueva Cantidad en Piezas:</label>
+                    <input type="number" name="piezas" class="ant-input">
+                </div>
+                <div class="ant-form-item">
+                    <label for="id_temporada" class="ant-form-item-label">Nuevo ID de Temporada:</label>
+                    <input type="number" name="id_temporada" class="ant-input">
+                </div>
+                <!-- Botones -->
+                <div class="center">
+                    <input type="submit" value="Actualizar" class="ant-btn ant-btn-primary">
+                    <input type="reset" value="Reset" class="ant-btn ant-btn-default">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/4.16.13/antd.min.js"></script>
+    <script src="dist/bundle.js"></script>
+</body>
+</html>
